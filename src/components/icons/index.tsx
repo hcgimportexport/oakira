@@ -7,9 +7,12 @@ import LucideIcons, {
     Headset,
     Heart,
     Home,
+    Info,
     Instagram,
     Leaf,
     Linkedin,
+    Mail,
+    MapPin,
     Menu,
     ShoppingBag,
     Twitter,
@@ -20,6 +23,9 @@ import LucideIcons, {
 export type Icon = LucideIcons.LucideIcon;
 
 export const Icons = {
+    MapPin,
+    Mail,
+    Info,
     ChevronLeft,
     Leaf,
     Heart,

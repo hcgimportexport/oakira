@@ -32,7 +32,7 @@ export function NavbarMob({ className, ...props }: GenericProps) {
                 "transition-all duration-500 ease-in-out",
                 "h-0 data-[menu-open=true]:h-screen",
                 "-top-1/2 bottom-0 data-[menu-open=true]:top-0",
-                "bg-background md:hidden",
+                "md:hidden",
                 "flex flex-col justify-between gap-4",
                 className
             )}
@@ -40,10 +40,10 @@ export function NavbarMob({ className, ...props }: GenericProps) {
             {...props}
         >
             <div
-                className="space-y-5 overflow-y-scroll pt-[4.5rem]"
+                className="space-y-5 overflow-y-scroll pt-[3.7rem]"
                 style={{ scrollbarWidth: "none" }}
             >
-                <ul ref={navListRef}>
+                <ul ref={navListRef} className="bg-background drop-shadow-md">
                     {siteConfig.menu.map((item, index) => {
                         const Icon = Icons[item.icon];
 
@@ -78,7 +78,9 @@ export function NavbarMob({ className, ...props }: GenericProps) {
                                     </div>
                                 </Link>
 
-                                <Separator />
+                                {index !== siteConfig.menu.length - 1 && (
+                                    <Separator />
+                                )}
                             </li>
                         );
                     })}
