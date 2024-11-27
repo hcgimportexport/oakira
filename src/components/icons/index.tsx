@@ -1,5 +1,6 @@
 import LucideIcons, {
     BookOpen,
+    ChevronLeft,
     ChevronRight,
     Facebook,
     Footprints,
@@ -19,6 +20,7 @@ import LucideIcons, {
 export type Icon = LucideIcons.LucideIcon;
 
 export const Icons = {
+    ChevronLeft,
     Leaf,
     Heart,
     Footprints,

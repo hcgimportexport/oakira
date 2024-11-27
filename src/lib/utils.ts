@@ -17,9 +17,6 @@ export function getAbsoluteURL(path: string = "/") {
     return "http://localhost:3000" + path;
 }
 
-// generate a function that will take the url as parameter and return the domain name
-// eg. "https://example.com" => "example.com"
-// eg. "http://example.com/path?query=string" => "example.com"
 export function getDomainNameFromURL(url: string) {
     return new URL(url).hostname;
 }
