@@ -22,6 +22,22 @@ export function NavbarMob({ className, ...props }: GenericProps) {
         else document.body.style.overflow = "auto";
     }, [isMenuOpen]);
 
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (
+                navContainerRef.current?.contains(event.target as Node) &&
+                !navListRef.current?.contains(event.target as Node)
+            )
+                setIsMenuOpen(false);
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [setIsMenuOpen]);
+
     return (
         <div
             aria-label="Mobile Menu"

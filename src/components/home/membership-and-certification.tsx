@@ -29,7 +29,7 @@ export function MemberShipAndCertification({
             </section>
 
             <section
-                className={cn("space-y-10 py-10 lg:hidden", className)}
+                className={cn("space-y-10 p-10 lg:hidden", className)}
                 {...props}
             >
                 <h2 className="text-balance text-center text-2xl font-semibold uppercase md:text-3xl">

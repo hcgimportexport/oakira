@@ -11,7 +11,7 @@ export function Footer({ className, ...props }: GenericProps) {
     return (
         <footer
             className={cn(
-                "flex items-center justify-center border-t",
+                "flex items-center justify-center bg-gradient-to-b from-background to-accent",
                 className
             )}
             {...props}
@@ -99,7 +99,7 @@ export function Footer({ className, ...props }: GenericProps) {
                     </div>
                 </div>
 
-                <Separator />
+                <Separator className="bg-accent-foreground/10" />
 
                 <div className="flex flex-col-reverse items-center justify-between gap-5 md:flex-row">
                     <p className="text-sm text-muted-foreground">

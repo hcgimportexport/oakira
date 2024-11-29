@@ -51,10 +51,10 @@ export function Landing({ className, banners, ...props }: PageProps) {
 
                                     <Button
                                         size="lg"
-                                        className="mt-1 bg-background/60 font-semibold uppercase text-foreground hover:bg-background/90 md:mt-0 md:py-5"
+                                        className="bg-accent font-semibold uppercase text-accent-foreground hover:bg-accent/90 md:mt-0 md:py-5"
                                         asChild
                                     >
-                                        <Link href="/soon">Discover More</Link>
+                                        <Link href="/about">Discover More</Link>
                                     </Button>
                                 </div>
                             </div>

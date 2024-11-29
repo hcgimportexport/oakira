@@ -1,6 +1,10 @@
-import { TrustedExportPartner } from "@/components/about";
+import {
+    CoreBeliefs,
+    OurMission,
+    TrustedExportPartner,
+} from "@/components/about";
 import { GeneralShell } from "@/components/globals/layouts";
-import { About, MemberShipAndCertification } from "@/components/home";
+import { About, Inquiry, MemberShipAndCertification } from "@/components/home";
 import Image from "next/image";
 
 export default function Page() {
@@ -23,8 +27,33 @@ export default function Page() {
 
             <GeneralShell>
                 <About title="Who Are We" />
-                <MemberShipAndCertification />
+            </GeneralShell>
+
+            <GeneralShell
+                classNames={{
+                    mainWrapper: "bg-muted",
+                    innerWrapper: "p-0",
+                }}
+            >
+                <OurMission />
+            </GeneralShell>
+
+            <GeneralShell>
                 <TrustedExportPartner />
+                <CoreBeliefs />
+            </GeneralShell>
+
+            <GeneralShell
+                classNames={{
+                    mainWrapper: "bg-muted",
+                    innerWrapper: "p-0",
+                }}
+            >
+                <MemberShipAndCertification />
+            </GeneralShell>
+
+            <GeneralShell>
+                <Inquiry />
             </GeneralShell>
         </>
     );

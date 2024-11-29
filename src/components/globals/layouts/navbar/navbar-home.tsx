@@ -19,6 +19,7 @@ export function NavbarHome() {
     useMotionValueEvent(scrollY, "change", (latest) => {
         const previous = scrollY.getPrevious() ?? 0;
 
+        if (isMenuOpen) return;
         if (latest > previous && latest > 150) setIsMenuHidden(true);
         else setIsMenuHidden(false);
     });

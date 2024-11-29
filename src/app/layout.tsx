@@ -1,3 +1,4 @@
+import { WhatsAppButton } from "@/components/globals/buttons";
 import { ClientProvider } from "@/components/providers";
 import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/config/site";
@@ -98,6 +99,7 @@ export default function RootLayout({ children }: LayoutProps) {
                     {children}
                     <Toaster />
                 </ClientProvider>
+                <WhatsAppButton />
             </body>
         </html>
     );

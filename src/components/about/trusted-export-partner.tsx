@@ -17,7 +17,7 @@ const carouselOptions: Partial<CarouselOptions> = {
     loop: true,
 };
 
-const autoplayPlugin = Autoplay({ delay: 5000 });
+const autoplayPlugin = Autoplay({ delay: 3000 });
 
 export function TrustedExportPartner({ className, ...props }: GenericProps) {
     const [api, setApi] = useState<CarouselApi>();
@@ -61,7 +61,7 @@ export function TrustedExportPartner({ className, ...props }: GenericProps) {
                         plugins={[autoplayPlugin]}
                         orientation="vertical"
                     >
-                        <CarouselContent className="-mt-1 h-[200px]">
+                        <CarouselContent className="h-[200px]">
                             {trustedPartner.company.map((item, index) => (
                                 <CarouselItem key={index}>
                                     <div className="flex h-full items-center justify-center text-balance border p-1 text-center">
@@ -86,7 +86,7 @@ export function TrustedExportPartner({ className, ...props }: GenericProps) {
                         plugins={[autoplayPlugin]}
                         orientation="vertical"
                     >
-                        <CarouselContent className="-mt-1 h-[200px]">
+                        <CarouselContent className="h-[200px]">
                             {trustedPartner.beliefs.map((item, index) => (
                                 <CarouselItem key={index}>
                                     <div className="flex h-full items-center justify-center text-balance border p-1 text-center">

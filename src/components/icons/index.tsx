@@ -1,4 +1,5 @@
 import LucideIcons, {
+    ArrowUpRight,
     BookOpen,
     ChevronLeft,
     ChevronRight,
@@ -23,6 +24,7 @@ import LucideIcons, {
 export type Icon = LucideIcons.LucideIcon;
 
 export const Icons = {
+    ArrowUpRight,
     MapPin,
     Mail,
     Info,
