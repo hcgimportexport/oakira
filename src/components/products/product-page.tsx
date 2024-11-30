@@ -65,7 +65,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
                         }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.4 + index * 0.2 }}
-                        className="text-2xl font-bold"
+                        className="text-lg font-bold md:text-2xl"
                     >
                         {product.title}
                     </motion.h3>
