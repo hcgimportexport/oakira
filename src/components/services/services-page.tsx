@@ -30,8 +30,12 @@ export function ServicesPage({ className, ...props }: GenericProps) {
                     style={{ x }}
                     className="flex snap-x snap-mandatory"
                 >
-                    {services.map((service) => (
-                        <ServiceCard service={service} key={service.title} />
+                    {services.map((service, i) => (
+                        <ServiceCard
+                            service={service}
+                            key={service.title}
+                            index={i}
+                        />
                     ))}
                 </motion.div>
             </div>
@@ -39,13 +43,27 @@ export function ServicesPage({ className, ...props }: GenericProps) {
     );
 }
 
-function ServiceCard({ service }: { service: Service }) {
+function ServiceCard({ service, index }: { service: Service; index: number }) {
     return (
         <div
             key={service.title}
             className="flex h-screen w-screen flex-col md:flex-row"
         >
-            <div className="h-screen w-screen basis-1/2 overflow-hidden">
+            <motion.div
+                initial={
+                    index === 0
+                        ? { opacity: 0, x: -20, filter: "blur(2px)" }
+                        : {}
+                }
+                whileInView={{
+                    opacity: 1,
+                    x: 0,
+                    filter: "blur(0px)",
+                }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="h-screen w-screen basis-1/2 overflow-hidden"
+            >
                 <Image
                     src={service.imageUrl}
                     alt={service.title}
@@ -53,14 +71,44 @@ function ServiceCard({ service }: { service: Service }) {
                     width={1000}
                     height={1000}
                 />
-            </div>
+            </motion.div>
 
             <div className="flex w-full basis-1/2 items-center justify-center p-10 md:p-20">
                 <div className="w-full space-y-2">
-                    <h4 className="text-4xl font-semibold">{service.title}</h4>
-                    <p className="text-muted-foreground">
+                    <motion.h4
+                        initial={
+                            index === 0
+                                ? { opacity: 0, x: 20, filter: "blur(2px)" }
+                                : {}
+                        }
+                        whileInView={{
+                            opacity: 1,
+                            x: 0,
+                            filter: "blur(0px)",
+                        }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="text-4xl font-semibold"
+                    >
+                        {service.title}
+                    </motion.h4>
+                    <motion.p
+                        initial={
+                            index === 0
+                                ? { opacity: 0, x: 20, filter: "blur(2px)" }
+                                : {}
+                        }
+                        whileInView={{
+                            opacity: 1,
+                            x: 0,
+                            filter: "blur(0px)",
+                        }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        className="text-muted-foreground"
+                    >
                         {service.description}
-                    </p>
+                    </motion.p>
                 </div>
             </div>
         </div>

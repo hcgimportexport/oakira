@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { Icons } from "../icons";
@@ -20,59 +21,175 @@ export function OurMission({ className, ...props }: GenericProps) {
         >
             <div className="flex w-full basis-1/2 justify-center">
                 <div className="space-y-5 md:space-y-10">
-                    <h2 className="text-balance text-xl font-semibold uppercase md:text-3xl">
+                    <motion.h2
+                        initial={{ opacity: 0, x: -20, filter: "blur(2px)" }}
+                        whileInView={{
+                            opacity: 1,
+                            x: 0,
+                            filter: "blur(0px)",
+                        }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="text-balance text-xl font-semibold uppercase md:text-3xl"
+                    >
                         What Defines Us
-                    </h2>
+                    </motion.h2>
 
-                    <h3 className="text-lg md:text-2xl">
+                    <motion.h3
+                        initial={{ opacity: 0, x: -20, filter: "blur(2px)" }}
+                        whileInView={{
+                            opacity: 1,
+                            x: 0,
+                            filter: "blur(0px)",
+                        }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        className="text-lg md:text-2xl"
+                    >
                         We are defined by our commitment to quality, innovation,
                         and exceptional customer satisfaction.
-                    </h3>
+                    </motion.h3>
 
                     <div className="space-y-5">
                         <div
                             className="space-y-2"
                             onMouseEnter={() => setHoveredIndex(0)}
                         >
-                            <h4 className="text-xl">Our Mission</h4>
+                            <motion.h4
+                                initial={{
+                                    opacity: 0,
+                                    x: -20,
+                                    filter: "blur(2px)",
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    x: 0,
+                                    filter: "blur(0px)",
+                                }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.6 }}
+                                className="text-xl"
+                            >
+                                Our Mission
+                            </motion.h4>
 
-                            <p className="text-xs md:text-sm">
+                            <motion.p
+                                initial={{
+                                    opacity: 0,
+                                    x: -20,
+                                    filter: "blur(2px)",
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    x: 0,
+                                    filter: "blur(0px)",
+                                }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.8 }}
+                                className="text-xs md:text-sm"
+                            >
                                 Our mission is to deliver innovative,
                                 high-quality products that enhance everyday
                                 life. We are dedicated to exceeding industry
                                 standards through exceptional craftsmanship and
                                 sustainability, and we focus on meeting the
                                 diverse needs of our global customers.
-                            </p>
+                            </motion.p>
                         </div>
 
-                        <Separator className="bg-foreground/40" />
+                        <motion.div
+                            initial={{
+                                opacity: 0,
+                                x: -20,
+                                filter: "blur(2px)",
+                            }}
+                            whileInView={{
+                                opacity: 1,
+                                x: 0,
+                                filter: "blur(0px)",
+                            }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.8 }}
+                        >
+                            <Separator className="bg-foreground/40" />
+                        </motion.div>
 
                         <div
                             className="space-y-2"
                             onMouseEnter={() => setHoveredIndex(1)}
                         >
-                            <h4 className="text-xl">Our Vision</h4>
+                            <motion.h4
+                                initial={{
+                                    opacity: 0,
+                                    x: -20,
+                                    filter: "blur(2px)",
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    x: 0,
+                                    filter: "blur(0px)",
+                                }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 1 }}
+                                className="text-xl"
+                            >
+                                Our Vision
+                            </motion.h4>
 
-                            <p className="text-xs md:text-sm">
+                            <motion.p
+                                initial={{
+                                    opacity: 0,
+                                    x: -20,
+                                    filter: "blur(2px)",
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    x: 0,
+                                    filter: "blur(0px)",
+                                }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 1.2 }}
+                                className="text-xs md:text-sm"
+                            >
                                 Our vision is to be a global leader in our
                                 industry, recognized for our commitment to
                                 innovation and quality. We aim to set new
                                 benchmarks in product excellence, fostering a
                                 positive impact on communities and industries
                                 worldwide.
-                            </p>
+                            </motion.p>
                         </div>
                     </div>
 
-                    <Button size="lg" className="w-full md:w-auto">
-                        <span>Learn More</span>
-                        <Icons.ChevronRight />
-                    </Button>
+                    <motion.div
+                        initial={{ opacity: 0, x: -20, filter: "blur(2px)" }}
+                        whileInView={{
+                            opacity: 1,
+                            x: 0,
+                            filter: "blur(0px)",
+                        }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 1.4 }}
+                    >
+                        <Button size="lg" className="w-full md:w-auto">
+                            <span>Learn More</span>
+                            <Icons.ChevronRight />
+                        </Button>
+                    </motion.div>
                 </div>
             </div>
 
-            <div className="aspect-[4/3] size-full basis-1/2">
+            <motion.div
+                initial={{ opacity: 0, x: 20, filter: "blur(2px)" }}
+                whileInView={{
+                    opacity: 1,
+                    x: 0,
+                    filter: "blur(0px)",
+                }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="aspect-[4/3] size-full basis-1/2"
+            >
                 <Image
                     src={
                         hoveredIndex === 0
@@ -84,7 +201,7 @@ export function OurMission({ className, ...props }: GenericProps) {
                     height={1000}
                     className="size-full object-cover"
                 />
-            </div>
+            </motion.div>
         </section>
     );
 }

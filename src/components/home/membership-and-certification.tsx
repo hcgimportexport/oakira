@@ -3,6 +3,7 @@
 import { certification } from "@/config/certification";
 import { cn } from "@/lib/utils";
 import Autoplay from "embla-carousel-autoplay";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
@@ -21,9 +22,19 @@ export function MemberShipAndCertification({
                 )}
                 {...props}
             >
-                <h4 className="text-lg font-semibold">
+                <motion.h4
+                    initial={{ opacity: 0, x: -20, filter: "blur(2px)" }}
+                    whileInView={{
+                        opacity: 1,
+                        x: 0,
+                        filter: "blur(0px)",
+                    }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="text-lg font-semibold"
+                >
                     Membership & Certification
-                </h4>
+                </motion.h4>
 
                 <InfiniteMovingCards items={certification} direction="left" />
             </section>

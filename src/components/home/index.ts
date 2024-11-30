@@ -1,6 +1,7 @@
 export * from "./about";
 export * from "./inquiry";
 export * from "./landing";
+export * from "./map";
 export * from "./membership-and-certification";
 export * from "./products";
 export * from "./social-strip";
