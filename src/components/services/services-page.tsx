@@ -14,7 +14,8 @@ export function ServicesPage({ className, ...props }: GenericProps) {
         target: targetRef,
     });
 
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-90%"]);
+    const eq = -(-100 / services.length + 100);
+    const x = useTransform(scrollYProgress, [0, 1], ["0%", `${eq}%`]);
 
     return (
         <section
