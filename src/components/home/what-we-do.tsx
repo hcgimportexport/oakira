@@ -32,32 +32,37 @@ export function WhatWeDo({ className, ...props }: GenericProps) {
                     transition={{ duration: 0.5, delay: 0.4 }}
                     className="text-sm text-muted-foreground md:text-base"
                 >
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Qui, cumque rerum voluptatem, ab sint facilis numquam
-                    temporibus eius corrupti, expedita amet perferendis quia
-                    suscipit excepturi. Eos, laudantium repellat temporibus
-                    mollitia provident nihil cumque corporis quisquam.
+                    Trust us for teas that delight your senses, promote
+                    wellness, and provide lasting value. <br /> Discover why tea
+                    lovers worldwide rely on HCG Group for unmatched flavor,
+                    freshness, and reliability.
                 </motion.p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-8 md:grid-cols-2">
                 <WhatWeDoCard
                     icon="Leaf"
-                    title="Import"
-                    description="Bringing the world to your doorstep, we import a diverse range of high-quality goods from trusted suppliers across the globe"
+                    title="Curating the Finest Teas"
+                    description="We source exceptional teas from world-renowned plantations, offering a wide variety, including black, green, white, oolong, and unique specialty blends."
                     index={0}
                 />
                 <WhatWeDoCard
                     icon="Heart"
-                    title="Export"
-                    description="Exporting quality products to destinations worldwide, connecting businesses to global markets seamlessly"
+                    title="Global Import and Export Services"
+                    description="With a seamless supply chain, we connect tea growers with international markets, delivering premium teas to retailers, wholesalers, and enthusiasts worldwide."
                     index={1}
                 />
                 <WhatWeDoCard
                     icon="Footprints"
-                    title="Sourcing"
-                    description="Scouring the globe to identify high-quality products at competitive prices, leveraging our extensive network of suppliers and manufacturers"
+                    title="Commitment to Sustainability"
+                    description="Ethical sourcing and eco-friendly practices are at the heart of what we do. We ensure our teas are grown responsibly, supporting both the environment and local communities."
                     index={2}
+                />
+                <WhatWeDoCard
+                    icon="Apple"
+                    title="Tailored Tea Solutions"
+                    description="From bulk orders to personalized blends, we provide customized solutions to meet the diverse needs of our partners and clients."
+                    index={3}
                 />
             </div>
         </section>

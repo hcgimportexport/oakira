@@ -22,7 +22,7 @@ export default function Page() {
             <GeneralShell
                 classNames={{
                     mainWrapper: "bg-muted",
-                    innerWrapper: "p-0",
+                    innerWrapper: "p-0 md:p-8 md:py-10",
                 }}
             >
                 <OurMission />

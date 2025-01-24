@@ -57,7 +57,7 @@ export function Landing({ className, banners, ...props }: PageProps) {
                                             duration: 0.5,
                                             delay: 0.2,
                                         }}
-                                        className="max-w-3xl text-balance text-3xl font-bold uppercase md:text-5xl lg:text-7xl"
+                                        className="max-w-3xl text-balance text-2xl font-bold uppercase md:text-4xl lg:text-6xl"
                                     >
                                         {item.title}
                                     </motion.h1>
@@ -77,7 +77,7 @@ export function Landing({ className, banners, ...props }: PageProps) {
                                             duration: 0.5,
                                             delay: 0.4,
                                         }}
-                                        className="max-w-xl text-balance text-background/80 md:text-lg lg:max-w-3xl lg:text-2xl"
+                                        className="max-w-xl text-balance text-sm text-background/80 md:text-base lg:max-w-3xl lg:text-xl"
                                     >
                                         {item.description}
                                     </motion.p>

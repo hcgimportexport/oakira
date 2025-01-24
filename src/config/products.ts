@@ -2,27 +2,52 @@ import { Product } from "@/lib/validations";
 
 export const products: Product[] = [
     {
-        title: "Premium Tea Collection",
+        title: "Black Tea",
         description: [
-            "HCG IMPORT EXPORT is a distinguished merchant import-export company specializing in the global trade of tea. We pride ourselves on sourcing and delivering exceptional quality teas from the world’s most renowned tea-producing regions.",
-            "With a keen focus on quality, sustainability, and customer satisfaction, we meticulously select our tea suppliers based on their commitment to ethical practices and superior craftsmanship. Our extensive network of tea estates and growers enables us to offer a diverse range of teas, including black, green, oolong, white, and herbal varieties",
+            "Rich, bold, and full-bodied, our black teas are sourced from premium estates known for their exceptional quality and flavor.",
         ],
         imageUrl: "https://picsum.photos/seed/5146/2000/2000",
     },
     {
-        title: "Pure Natural Honey",
+        title: "Green Tea",
         description: [
-            "HCG IMPORT EXPORT is a leading supplier of premium quality honey sourced from the world’s most pristine regions. Our honey is raw, unprocessed, and free from additives, ensuring that you receive all the natural goodness and health benefits that honey has to offer.",
-            "We work closely with our beekeepers to ensure that our honey is ethically sourced and sustainably harvested. Our range of honey includes a variety of floral types, each with its own unique flavor profile and health benefits.",
+            "Delicate and refreshing, our green teas are carefully processed to retain their natural antioxidants and health benefits.",
         ],
         imageUrl: "https://picsum.photos/seed/54646/2000/2000",
     },
     {
-        title: "Fresh Exotic Fruits",
+        title: "White Tea",
         description: [
-            "HCG IMPORT EXPORT is a trusted supplier of fresh exotic fruits sourced from the world’s most fertile and pristine regions. Our fruits are handpicked at the peak of ripeness to ensure maximum flavor and nutritional value.",
-            "We work closely with our growers to ensure that our fruits are grown using sustainable farming practices that protect the environment and support local communities. Our range of exotic fruits includes a variety of tropical and subtropical fruits, each with its own unique flavor and health benefits.",
+            "Rare and exquisite, our white teas are minimally processed, offering a light, smooth taste and subtle aromas.",
         ],
         imageUrl: "https://picsum.photos/seed/986/2000/2000",
+    },
+    {
+        title: "Oolong Tea",
+        description: [
+            "Perfectly balanced between black and green tea, our oolong teas provide complex flavors with floral and fruity notes.",
+        ],
+        imageUrl: "https://picsum.photos/seed/654/2000/2000",
+    },
+    {
+        title: "Herbal and Wellness Blends",
+        description: [
+            "Caffeine-free and infused with natural herbs, our wellness blends are crafted to soothe, relax, and rejuvenate.",
+        ],
+        imageUrl: "https://picsum.photos/seed/6546/2000/2000",
+    },
+    {
+        title: "Specialty and Flavored Teas",
+        description: [
+            "From spiced chai to fruity infusions, our specialty teas are designed for those who love a creative twist in their cup.",
+        ],
+        imageUrl: "https://picsum.photos/seed/6546/2000/2000",
+    },
+    {
+        title: "Custom Blends",
+        description: [
+            "Create your own unique blends with our customization services, tailored to meet your business or personal needs.",
+        ],
+        imageUrl: "https://picsum.photos/seed/6546/2000/2000",
     },
 ];

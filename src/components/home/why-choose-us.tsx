@@ -34,15 +34,16 @@ export function WhyChooseUs({ className, ...props }: GenericProps) {
                     transition={{ duration: 0.5, delay: 0.4 }}
                     className="text-sm text-muted-foreground md:text-base"
                 >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Accusamus vitae laudantium distinctio praesentium tempore
-                    totam perferendis. Qui maxime blanditiis amet ipsum nihil
-                    unde cum id eveniet! Similique assumenda sed dolorum sit
-                    inventore, porro est temporibus!
+                    Explore the benefits of choosing HCG Group for your tea
+                    needs. Our expertise includes a diverse range of teas, with
+                    a special focus on the world-renowned Darjeeling teas. Known
+                    as the &ldquo;Champagne of Teas,&rdquo; our Darjeeling
+                    blends offer a unique aroma and flavor that tea enthusiasts
+                    treasure.
                 </motion.p>
             </div>
 
-            <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
                 {whyChooseUs.map((item, index) => (
                     <WhyChooseUsCard key={index} index={index} {...item} />
                 ))}

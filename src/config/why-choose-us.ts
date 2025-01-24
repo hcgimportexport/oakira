@@ -2,39 +2,27 @@ import { WhyChooseUs } from "@/lib/validations";
 
 export const whyChooseUs: WhyChooseUs[] = [
     {
-        title: "Global Reach",
-        description:
-            "Our extensive network spans across continents, enabling us to access diverse markets and source the best products worldwide",
-        imageUrl: "https://picsum.photos/seed/101/1280/720",
-    },
-    {
-        title: "Expertise and Experience",
-        description:
-            "With years of experience in international trade, our team possesses the knowledge and skills to navigate complex regulations and optimize import-export processes",
-        imageUrl: "https://picsum.photos/seed/102/1280/720",
-    },
-    {
-        title: "Competitive Pricing",
-        description:
-            "Your competitive pricing structures ensure cost-effectiveness, enhancing our competitiveness in the market while maximizing profitability",
-        imageUrl: "https://picsum.photos/seed/103/1280/720",
-    },
-    {
         title: "Quality Assurance",
         description:
-            "We prioritize quality at every step of the import-export journey, working only with trusted suppliers and conducting rigorous quality checks to deliver superior products to our clients",
+            "We prioritize quality at every stage of tea production. From sourcing the finest tea leaves to the final packaging, our stringent quality checks ensure our teas meet international standards for flavor, freshness, and purity.",
         imageUrl: "https://picsum.photos/seed/104/1280/720",
     },
     {
-        title: "Reliability and Transparency",
+        title: "Quick Delivery",
         description:
-            "Clients can trust us to deliver on our promises. We maintain transparent communication throughout the entire transaction process, providing updates and resolving any issues promptly",
-        imageUrl: "https://picsum.photos/seed/105/1280/720",
+            "We meticulously plan each stage of our deliveries to prevent any delays. Our tea shipments are dispatched on the earliest available schedules, with customs documents organized per each country's guidelines to ensure smooth and timely transitions.",
+        imageUrl: "https://picsum.photos/seed/101/1280/720",
     },
     {
-        title: "Complete Pricing",
+        title: "Exceptional After-Sales Service",
         description:
-            "Your commitment to understanding and meeting the unique needs of clients fosters strong, long-term relationships based on trust and satisfaction",
-        imageUrl: "https://picsum.photos/seed/106/1280/720",
+            "Our commitment to you extends beyond the sale. We provide exceptional after-sales service, ready to address any questions or concerns about our teas. Our dedicated team ensures your complete satisfaction with every purchase.",
+        imageUrl: "https://picsum.photos/seed/102/1280/720",
+    },
+    {
+        title: "Top Quality Teas at Affordable Rates",
+        description:
+            "At HCG Group, we believe that premium teas should be accessible to all. By leveraging efficient production techniques and economies of scale, we offer our top-quality teas, including Darjeeling specialties, at highly competitive prices.",
+        imageUrl: "https://picsum.photos/seed/103/1280/720",
     },
 ];

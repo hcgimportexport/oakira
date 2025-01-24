@@ -66,12 +66,12 @@ export function About({ className, title, ...props }: PageProps) {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.8 }}
                         >
-                            Lorem ipsum dolor sit, amet consectetur adipisicing
-                            elit. Maxime quidem vero aperiam veniam facere
-                            officia fugiat temporibus voluptate! Numquam nihil
-                            enim magnam architecto eos consequuntur cumque aut,
-                            doloribus magni expedita cupiditate atque aliquid
-                            similique deserunt.
+                            At HCG Group , we connect tea lovers worldwide with
+                            the finest blends from top plantations. From the
+                            robust flavors of Assam to the delicate notes of
+                            Darjeeling, we specialize in sourcing and exporting
+                            premium teas with a commitment to quality and
+                            sustainability.
                         </motion.p>
 
                         <motion.p
@@ -84,9 +84,12 @@ export function About({ className, title, ...props }: PageProps) {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 1 }}
                         >
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Fugit quaerat illum dolorem suscipit eos ipsam
-                            autem iure nam quibusdam ratione?
+                            Our mission is to bridge the gap between growers and
+                            consumers by promoting eco-friendly practices and
+                            fair trade, ensuring every cup tells a story of
+                            tradition and care. Whether you&apos;re a retailer,
+                            distributor, or tea enthusiast, HCG is your trusted
+                            partner for exceptional teas.
                         </motion.p>
 
                         <motion.p
@@ -98,28 +101,9 @@ export function About({ className, title, ...props }: PageProps) {
                             }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 1.2 }}
+                            className="font-semibold"
                         >
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Possimus iure velit explicabo incidunt natus
-                            dolorem obcaecati adipisci voluptatum voluptatem
-                            nihil eum ad voluptas perspiciatis officiis,
-                            doloribus vitae saepe, itaque fugit numquam. Tenetur
-                            quam voluptatibus quia beatae atque amet, laborum
-                            qui.
-                        </motion.p>
-
-                        <motion.p
-                            initial={{ opacity: 0, x: 20, filter: "blur(2px)" }}
-                            whileInView={{
-                                opacity: 1,
-                                x: 0,
-                                filter: "blur(0px)",
-                            }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 1.4 }}
-                        >
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Ducimus, corporis.
+                            Sip the world with us.
                         </motion.p>
                     </div>
 
@@ -131,7 +115,7 @@ export function About({ className, title, ...props }: PageProps) {
                             filter: "blur(0px)",
                         }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 1.6 }}
+                        transition={{ duration: 0.5, delay: 1.4 }}
                     >
                         <Button size="lg" className="w-full md:w-auto">
                             <span>Learn More</span>
