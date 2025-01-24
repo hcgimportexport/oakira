@@ -16,8 +16,15 @@ export default function Page() {
         <>
             <Landing banners={banners} />
 
+            <GeneralShell
+                classNames={{
+                    mainWrapper: "bg-[#1e1e1e]",
+                }}
+            >
+                <About title="About Us" className="text-background" />
+            </GeneralShell>
+
             <GeneralShell>
-                <About title="About Us" />
                 <WhatWeDo />
                 <Products />
             </GeneralShell>

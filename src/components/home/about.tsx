@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Icons } from "../icons";
 import { Button } from "../ui/button";
 
@@ -11,6 +12,8 @@ interface PageProps extends GenericProps {
 }
 
 export function About({ className, title, ...props }: PageProps) {
+    const pathname = usePathname();
+
     return (
         <section
             className={cn(
@@ -117,7 +120,14 @@ export function About({ className, title, ...props }: PageProps) {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 1.4 }}
                     >
-                        <Button size="lg" className="w-full md:w-auto">
+                        <Button
+                            size="lg"
+                            className={cn(
+                                "w-full md:w-auto",
+                                pathname === "/" &&
+                                    "bg-background text-foreground hover:bg-background/80"
+                            )}
+                        >
                             <span>Learn More</span>
                             <Icons.ChevronRight />
                         </Button>

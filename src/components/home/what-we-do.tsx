@@ -47,7 +47,7 @@ export function WhatWeDo({ className, ...props }: GenericProps) {
                     index={0}
                 />
                 <WhatWeDoCard
-                    icon="Heart"
+                    icon="Home"
                     title="Global Import and Export Services"
                     description="With a seamless supply chain, we connect tea growers with international markets, delivering premium teas to retailers, wholesalers, and enthusiasts worldwide."
                     index={1}
@@ -59,7 +59,7 @@ export function WhatWeDo({ className, ...props }: GenericProps) {
                     index={2}
                 />
                 <WhatWeDoCard
-                    icon="Apple"
+                    icon="Heart"
                     title="Tailored Tea Solutions"
                     description="From bulk orders to personalized blends, we provide customized solutions to meet the diverse needs of our partners and clients."
                     index={3}
