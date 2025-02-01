@@ -44,10 +44,28 @@ export const siteConfig: SiteConfig = {
             icon: "ShoppingBag",
         },
         {
+            name: "Dealership",
+            description: "Become a dealer",
+            href: "/dealership",
+            icon: "MapPin",
+        },
+        {
             name: "Products",
             description: "Discover our products",
             href: "/products",
             icon: "BookOpen",
+        },
+        {
+            name: "Export",
+            description: "Export products",
+            href: "/export",
+            icon: "Upload",
+        },
+        {
+            name: "Catalogue",
+            description: "Browse our catalogue",
+            href: "/catalogue",
+            icon: "Grid",
         },
         {
             name: "Contact",

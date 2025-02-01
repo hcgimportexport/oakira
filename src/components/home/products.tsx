@@ -3,144 +3,105 @@
 import { products } from "@/config/products";
 import { cn } from "@/lib/utils";
 import Autoplay from "embla-carousel-autoplay";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Image from "next/image";
-import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "../ui/carousel";
 
 export function Products({ className, ...props }: GenericProps) {
     return (
-        <section className={cn("space-y-10 py-10", className)} {...props}>
-            <motion.h2
-                initial={{ opacity: 0, y: 20, filter: "blur(2px)" }}
-                whileInView={{
-                    opacity: 1,
-                    y: 0,
-                    filter: "blur(0px)",
-                }}
+        <section className={cn("space-y-16 py-20", className)} {...props}>
+            <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="rounded-full border px-6 py-2 text-sm font-medium uppercase tracking-wider text-muted-foreground"
+                >
+                    Discover Our Range
+                </motion.p>
+
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="text-3xl font-bold md:text-4xl lg:text-5xl"
+                >
+                    Our <span className="text-accent">Products</span>
+                </motion.h2>
+            </div>
+
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-balance text-center text-2xl font-semibold uppercase md:text-3xl"
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="relative md:px-12"
             >
-                Our Products
-            </motion.h2>
+                <Carousel
+                    opts={{
+                        align: "start",
+                        loop: true,
+                    }}
+                    plugins={[
+                        Autoplay({
+                            delay: 5000,
+                        }),
+                    ]}
+                >
+                    <CarouselContent className="-ml-4">
+                        {products.map((item, index) => (
+                            <CarouselItem
+                                key={index}
+                                className="pl-4 md:basis-2/3"
+                            >
+                                <div className="group space-y-8">
+                                    <div className="overflow-hidden rounded-3xl">
+                                        <div className="relative aspect-[16/9]">
+                                            <Image
+                                                src={item.imageUrl}
+                                                alt={item.title}
+                                                width={2000}
+                                                height={1000}
+                                                className="size-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                priority={index === 0}
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                                        </div>
+                                    </div>
 
-            <Carousel
-                opts={{
-                    align: "start",
-                    loop: true,
-                }}
-                plugins={[
-                    Autoplay({
-                        delay: 5000,
-                    }),
-                ]}
-            >
-                <CarouselContent className="flex flex-row gap-5">
-                    {products.map((item, index) => (
-                        <CarouselItem key={index}>
-                            <div className="space-y-5">
-                                <motion.div
-                                    initial={
-                                        index === 0
-                                            ? {
-                                                  opacity: 0,
-                                                  y: 20,
-                                                  filter: "blur(2px)",
-                                              }
-                                            : {}
-                                    }
-                                    whileInView={
-                                        index === 0
-                                            ? {
-                                                  opacity: 1,
-                                                  y: 0,
-                                                  filter: "blur(0px)",
-                                              }
-                                            : {}
-                                    }
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: 0.4 }}
-                                    className="aspect-square size-full md:aspect-[16/5]"
-                                >
-                                    <Image
-                                        src={item.imageUrl}
-                                        alt={item.title}
-                                        width={2000}
-                                        height={2000}
-                                        className="size-full object-cover brightness-50"
-                                        priority={index === 0}
-                                    />
-                                </motion.div>
+                                    <div className="space-y-4">
+                                        <h3 className="text-2xl font-semibold md:text-3xl">
+                                            {item.title}
+                                        </h3>
 
-                                <div className="space-y-4">
-                                    <motion.h3
-                                        initial={
-                                            index === 0
-                                                ? {
-                                                      opacity: 0,
-                                                      y: 20,
-                                                      filter: "blur(2px)",
-                                                  }
-                                                : {}
-                                        }
-                                        whileInView={
-                                            index === 0
-                                                ? {
-                                                      opacity: 1,
-                                                      y: 0,
-                                                      filter: "blur(0px)",
-                                                  }
-                                                : {}
-                                        }
-                                        viewport={{ once: true }}
-                                        transition={{
-                                            duration: 0.5,
-                                            delay: 0.6,
-                                        }}
-                                        className="text-balance text-xl font-semibold uppercase md:text-3xl"
-                                    >
-                                        {item.title}
-                                    </motion.h3>
-
-                                    <div className="space-y-2">
-                                        {item.description.map((x, i) => (
-                                            <motion.p
-                                                initial={
-                                                    index === 0
-                                                        ? {
-                                                              opacity: 0,
-                                                              y: 20,
-                                                              filter: "blur(2px)",
-                                                          }
-                                                        : {}
-                                                }
-                                                whileInView={
-                                                    index === 0
-                                                        ? {
-                                                              opacity: 1,
-                                                              y: 0,
-                                                              filter: "blur(0px)",
-                                                          }
-                                                        : {}
-                                                }
-                                                viewport={{ once: true }}
-                                                transition={{
-                                                    duration: 0.5,
-                                                    delay: 0.8 + i * 0.2,
-                                                }}
-                                                className="text-sm md:text-base"
-                                                key={i}
-                                            >
-                                                {x}
-                                            </motion.p>
-                                        ))}
+                                        <div className="space-y-2 text-muted-foreground">
+                                            {item.description.map((desc, i) => (
+                                                <p
+                                                    key={i}
+                                                    className="text-balance"
+                                                >
+                                                    {desc}
+                                                </p>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </CarouselItem>
-                    ))}
-                </CarouselContent>
-            </Carousel>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+
+                    <CarouselPrevious className="hidden md:inline-block" />
+                    <CarouselNext className="hidden md:inline-block" />
+                </Carousel>
+            </motion.div>
         </section>
     );
 }

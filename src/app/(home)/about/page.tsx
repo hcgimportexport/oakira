@@ -1,6 +1,7 @@
 import {
     CoreBeliefs,
     OurMission,
+    Stats,
     TrustedExportPartner,
 } from "@/components/about";
 import { Header } from "@/components/globals/headers";
@@ -28,6 +29,14 @@ export default function Page() {
                 <OurMission />
             </GeneralShell>
 
+            <GeneralShell
+                classNames={{
+                    mainWrapper: "bg-[#1e1e1e]",
+                }}
+            >
+                <Stats />
+            </GeneralShell>
+
             <GeneralShell>
                 <TrustedExportPartner />
                 <CoreBeliefs />
@@ -42,7 +51,11 @@ export default function Page() {
                 <MemberShipAndCertification />
             </GeneralShell>
 
-            <GeneralShell>
+            <GeneralShell
+                classNames={{
+                    mainWrapper: "bg-muted",
+                }}
+            >
                 <Inquiry />
             </GeneralShell>
         </>

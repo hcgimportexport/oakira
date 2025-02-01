@@ -4,7 +4,7 @@ import { Icons } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 import { useNavbarStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -27,31 +27,24 @@ export function NavbarHome() {
     return (
         <motion.header
             variants={{
-                visible: {
-                    y: 0,
-                },
-                hidden: {
-                    y: "-100%",
-                },
+                visible: { y: 0 },
+                hidden: { y: "-100%" },
             }}
             animate={isMenuHidden ? "hidden" : "visible"}
-            transition={{
-                duration: 0.35,
-                ease: "easeInOut",
-            }}
-            className="sticky inset-x-0 top-0 z-50 flex h-auto w-full items-center justify-center bg-background"
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className="sticky inset-x-0 top-0 z-50 flex h-auto w-full items-center justify-center bg-background/80 backdrop-blur-lg"
             data-menu-open={isMenuOpen}
         >
             <nav
                 className={cn(
-                    "relative z-10 flex w-full max-w-5xl items-center justify-between gap-5 overflow-hidden p-4 md:px-8 xl:max-w-[100rem]",
+                    "relative z-10 flex w-full max-w-5xl items-center justify-between gap-5 p-4 md:px-8 xl:max-w-[100rem]",
                     isMenuOpen && "border-b"
                 )}
             >
                 <button
                     aria-label="Mobile Menu Toggle Button"
                     aria-pressed={isMenuOpen}
-                    className="sm:hidden"
+                    className="rounded-full p-2 transition-colors duration-300 hover:bg-accent/10 sm:hidden"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                     <Icons.Menu className="size-6" />
@@ -60,38 +53,33 @@ export function NavbarHome() {
                 <Link
                     href="/"
                     title="Home"
-                    className="flex items-center gap-1 text-2xl font-bold hover:opacity-100 active:opacity-100"
+                    className="flex items-center gap-2 text-2xl font-bold transition-transform duration-300 hover:scale-105"
                 >
-                    {/* <Renivet className="size-8" /> */}
-
                     <h4 className="text-xl font-bold uppercase md:text-2xl">
                         {siteConfig.name}
                     </h4>
                 </Link>
 
                 <ul className="hidden items-center gap-10 sm:flex">
-                    {!!siteConfig.menu.length &&
-                        siteConfig.menu.map((item, index) => (
-                            <li key={index}>
-                                <Link
-                                    className={cn(
-                                        "text-sm ease-in-out",
-                                        item.isDisabled &&
-                                            "cursor-not-allowed opacity-50"
-                                    )}
-                                    prefetch
-                                    href={item.href}
-                                    target={
-                                        item.isExternal ? "_blank" : "_self"
-                                    }
-                                    onClick={(e) =>
-                                        item.isDisabled && e.preventDefault()
-                                    }
-                                >
-                                    {item.name}
-                                </Link>
-                            </li>
-                        ))}
+                    {siteConfig.menu.map((item, index) => (
+                        <li key={index}>
+                            <Link
+                                className={cn(
+                                    "group relative text-sm font-medium transition-colors",
+                                    item.isDisabled &&
+                                        "cursor-not-allowed opacity-50"
+                                )}
+                                href={item.href}
+                                target={item.isExternal ? "_blank" : "_self"}
+                                onClick={(e) =>
+                                    item.isDisabled && e.preventDefault()
+                                }
+                            >
+                                {item.name}
+                                <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-accent transition-all duration-300 group-hover:w-full" />
+                            </Link>
+                        </li>
+                    ))}
                 </ul>
             </nav>
         </motion.header>

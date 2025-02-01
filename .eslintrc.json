@@ -1,5 +1,5 @@
 {
-    "plugins": ["tailwindcss", "unused-imports"],
+    "plugins": ["tailwindcss", "unused-imports", "drizzle"],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": 2021,
@@ -13,7 +13,8 @@
         "next/core-web-vitals",
         "next/typescript",
         "prettier",
-        "plugin:tailwindcss/recommended"
+        "plugin:tailwindcss/recommended",
+        "plugin:drizzle/recommended"
     ],
     "rules": {
         "semi": "error",
@@ -22,6 +23,8 @@
         "unused-imports/no-unused-vars": "warn",
         "@typescript-eslint/no-explicit-any": "warn",
         "@typescript-eslint/no-unused-vars": "off",
+        "drizzle/enforce-delete-with-where": "error",
+        "drizzle/enforce-update-with-where": "error",
         "@typescript-eslint/ban-ts-comment": "off",
         "no-unused-vars": ["off", "always"],
         "quotes": ["error", "double"],

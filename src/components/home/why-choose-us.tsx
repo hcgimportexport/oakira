@@ -3,36 +3,39 @@
 import { whyChooseUs } from "@/config/why-choose-us";
 import { cn } from "@/lib/utils";
 import { WhyChooseUs as WhyChooseUsType } from "@/lib/validations";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Image from "next/image";
 
 export function WhyChooseUs({ className, ...props }: GenericProps) {
     return (
-        <section className={cn("space-y-10 py-10", className)} {...props}>
-            <div className="flex flex-col items-center gap-2 text-balance text-center">
-                <motion.h2
-                    initial={{ opacity: 0, y: 20, filter: "blur(2px)" }}
-                    whileInView={{
-                        opacity: 1,
-                        y: 0,
-                        filter: "blur(0px)",
-                    }}
+        <section className={cn("space-y-16 py-20", className)} {...props}>
+            <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="text-2xl font-semibold uppercase md:text-3xl"
+                    transition={{ duration: 0.5 }}
+                    className="rounded-full border px-6 py-2 text-sm font-medium uppercase tracking-wider text-muted-foreground"
                 >
                     Why Choose Us
+                </motion.p>
+
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="text-3xl font-bold md:text-4xl lg:text-5xl"
+                >
+                    Excellence in <span className="text-accent">Every Cup</span>
                 </motion.h2>
+
                 <motion.p
-                    initial={{ opacity: 0, y: 20, filter: "blur(2px)" }}
-                    whileInView={{
-                        opacity: 1,
-                        y: 0,
-                        filter: "blur(0px)",
-                    }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.4 }}
-                    className="text-sm text-muted-foreground md:text-base"
+                    className="text-balance text-muted-foreground md:text-lg"
                 >
                     Explore the benefits of choosing HCG Group for your tea
                     needs. Our expertise includes a diverse range of teas, with
@@ -43,7 +46,7 @@ export function WhyChooseUs({ className, ...props }: GenericProps) {
                 </motion.p>
             </div>
 
-            <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
+            <div className="grid gap-10 md:grid-cols-2">
                 {whyChooseUs.map((item, index) => (
                     <WhyChooseUsCard key={index} index={index} {...item} />
                 ))}
@@ -58,61 +61,39 @@ function WhyChooseUsCard({
     imageUrl,
     className,
     index,
-    ...props
 }: WhyChooseUsType & GenericProps & { index: number }) {
     return (
-        <div
-            className={cn("flex flex-col items-center gap-5", className)}
-            {...props}
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.6 + index * 0.2 }}
+            className={cn(
+                "group space-y-6 rounded-3xl bg-muted/50 p-8 transition-colors duration-300 hover:bg-accent/10",
+                className
+            )}
         >
-            <motion.div
-                initial={{ opacity: 0, y: 20, filter: "blur(2px)" }}
-                whileInView={{
-                    opacity: 1,
-                    y: 0,
-                    filter: "blur(0px)",
-                }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.2 }}
-                className="aspect-video w-full overflow-hidden"
-            >
-                <Image
-                    src={imageUrl}
-                    alt={title}
-                    width={1000}
-                    height={1000}
-                    className="size-full object-cover"
-                />
-            </motion.div>
-
-            <div className="space-y-2 text-balance text-center">
-                <motion.h3
-                    initial={{ opacity: 0, y: 20, filter: "blur(2px)" }}
-                    whileInView={{
-                        opacity: 1,
-                        y: 0,
-                        filter: "blur(0px)",
-                    }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.6 + index * 0.2 }}
-                    className="text-2xl font-semibold"
-                >
-                    {title}
-                </motion.h3>
-                <motion.p
-                    initial={{ opacity: 0, y: 20, filter: "blur(2px)" }}
-                    whileInView={{
-                        opacity: 1,
-                        y: 0,
-                        filter: "blur(0px)",
-                    }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.8 + index * 0.2 }}
-                    className="text-muted-foreground"
-                >
-                    {description}
-                </motion.p>
+            <div className="overflow-hidden rounded-2xl">
+                <div className="relative aspect-video">
+                    <Image
+                        src={imageUrl}
+                        alt={title}
+                        width={1000}
+                        height={1000}
+                        className="size-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/20 to-transparent" />
+                </div>
             </div>
-        </div>
+
+            <div className="space-y-4">
+                <h3 className="text-2xl font-semibold">{title}</h3>
+                <p className="text-balance text-muted-foreground">
+                    {description}
+                </p>
+            </div>
+
+            <div className="absolute inset-0 -z-10 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        </motion.div>
     );
 }

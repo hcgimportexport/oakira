@@ -41,6 +41,13 @@ export default function Page() {
             <GeneralShell>
                 <WhyChooseUs />
                 <MapFrame />
+            </GeneralShell>
+
+            <GeneralShell
+                classNames={{
+                    mainWrapper: "bg-muted",
+                }}
+            >
                 <Inquiry />
             </GeneralShell>
         </>

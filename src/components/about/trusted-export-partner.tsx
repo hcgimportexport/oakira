@@ -3,7 +3,7 @@
 import { trustedPartner } from "@/config/trusted-partner";
 import { cn } from "@/lib/utils";
 import Autoplay from "embla-carousel-autoplay";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import {
     Carousel,
@@ -45,34 +45,38 @@ export function TrustedExportPartner({ className, ...props }: GenericProps) {
     }, [api, secondApi]);
 
     return (
-        <section className={cn("space-y-10 py-10", className)} {...props}>
-            <motion.h2
-                initial={{ opacity: 0, y: 20, filter: "blur(2px)" }}
-                whileInView={{
-                    opacity: 1,
-                    y: 0,
-                    filter: "blur(0px)",
-                }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-balance text-center text-2xl font-semibold uppercase md:text-3xl"
-            >
-                &ldquo;Trusted Export Partner&rdquo;
-            </motion.h2>
+        <section className={cn("space-y-16 py-20", className)} {...props}>
+            <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="rounded-full border px-6 py-2 text-sm font-medium uppercase tracking-wider text-muted-foreground"
+                >
+                    Our Values
+                </motion.p>
 
-            <div className="flex flex-col justify-between gap-10 md:flex-row">
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="text-3xl font-bold md:text-4xl lg:text-5xl"
+                >
+                    Trusted <span className="text-accent">Export Partner</span>
+                </motion.h2>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2">
                 <motion.div
-                    initial={{ opacity: 0, x: -20, filter: "blur(2px)" }}
-                    whileInView={{
-                        opacity: 1,
-                        x: 0,
-                        filter: "blur(0px)",
-                    }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.4 }}
-                    className="basis-1/2 space-y-5"
+                    className="space-y-6"
                 >
-                    <h3 className="text-balance text-center text-xl font-semibold">
+                    <h3 className="text-center text-xl font-semibold">
                         Company Values
                     </h3>
 
@@ -81,14 +85,17 @@ export function TrustedExportPartner({ className, ...props }: GenericProps) {
                         opts={carouselOptions}
                         plugins={[autoplayPlugin]}
                         orientation="vertical"
+                        className="h-[300px]"
                     >
-                        <CarouselContent className="h-[200px]">
+                        <CarouselContent className="-mt-4 h-[300px]">
                             {trustedPartner.company.map((item, index) => (
-                                <CarouselItem key={index}>
-                                    <div className="flex h-full items-center justify-center text-balance border p-1 text-center">
-                                        <span className="text-2xl font-semibold md:text-3xl">
+                                <CarouselItem key={index} className="pt-4">
+                                    <div className="group relative flex h-full items-center justify-center overflow-hidden rounded-3xl bg-muted/50 p-8 text-center transition-colors duration-300 hover:bg-accent/10">
+                                        <p className="text-balance text-2xl font-semibold md:text-3xl">
                                             {item}
-                                        </span>
+                                        </p>
+
+                                        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                                     </div>
                                 </CarouselItem>
                             ))}
@@ -97,17 +104,13 @@ export function TrustedExportPartner({ className, ...props }: GenericProps) {
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, x: 20, filter: "blur(2px)" }}
-                    whileInView={{
-                        opacity: 1,
-                        x: 0,
-                        filter: "blur(0px)",
-                    }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    className="basis-1/2 space-y-5"
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    className="space-y-6"
                 >
-                    <h3 className="text-balance text-center text-xl font-semibold">
+                    <h3 className="text-center text-xl font-semibold">
                         We Believe In
                     </h3>
 
@@ -116,14 +119,16 @@ export function TrustedExportPartner({ className, ...props }: GenericProps) {
                         opts={carouselOptions}
                         plugins={[autoplayPlugin]}
                         orientation="vertical"
+                        className="h-[300px]"
                     >
-                        <CarouselContent className="h-[200px]">
+                        <CarouselContent className="-mt-4 h-[300px]">
                             {trustedPartner.beliefs.map((item, index) => (
-                                <CarouselItem key={index}>
-                                    <div className="flex h-full items-center justify-center text-balance border p-1 text-center">
-                                        <span className="text-2xl font-semibold md:text-3xl">
+                                <CarouselItem key={index} className="pt-4">
+                                    <div className="group relative flex h-full items-center justify-center overflow-hidden rounded-3xl bg-muted/50 p-8 text-center transition-colors duration-300 hover:bg-accent/10">
+                                        <p className="text-balance text-2xl font-semibold md:text-3xl">
                                             {item}
-                                        </span>
+                                        </p>
+                                        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                                     </div>
                                 </CarouselItem>
                             ))}

@@ -1,7 +1,6 @@
 "use client";
 
 import { Icons } from "@/components/icons";
-import { Separator } from "@/components/ui/separator";
 import { siteConfig } from "@/config/site";
 import { useNavbarStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
@@ -49,7 +48,7 @@ export function NavbarMob({ className, ...props }: GenericProps) {
                 "h-0 data-[menu-open=true]:h-screen",
                 "-top-1/2 bottom-0 data-[menu-open=true]:top-0",
                 "md:hidden",
-                "flex flex-col justify-between gap-4",
+                "flex flex-col justify-between gap-4 bg-background/80 backdrop-blur-lg",
                 className
             )}
             ref={navContainerRef}
@@ -59,7 +58,7 @@ export function NavbarMob({ className, ...props }: GenericProps) {
                 className="space-y-5 overflow-y-scroll pt-[3.7rem]"
                 style={{ scrollbarWidth: "none" }}
             >
-                <ul ref={navListRef} className="bg-background drop-shadow-md">
+                <ul ref={navListRef} className="space-y-2 p-4">
                     {siteConfig.menu.map((item, index) => {
                         const Icon = Icons[item.icon];
 
@@ -70,33 +69,28 @@ export function NavbarMob({ className, ...props }: GenericProps) {
                             >
                                 <Link
                                     href={item.href}
-                                    className="flex items-center justify-between gap-2 p-4"
+                                    className="group flex items-center justify-between rounded-2xl bg-muted/50 p-4 transition-colors duration-300 hover:bg-accent/10"
                                     target={
                                         item.isExternal ? "_blank" : "_self"
                                     }
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     <div className="flex items-center gap-4">
-                                        <Icon className="size-5 text-muted-foreground" />
+                                        <div className="rounded-full bg-accent/10 p-2 text-accent transition-transform duration-300 group-hover:scale-110">
+                                            <Icon className="size-5" />
+                                        </div>
                                         <div>
-                                            <p className="text-sm font-semibold">
+                                            <p className="font-semibold">
                                                 {item.name}
                                             </p>
-
-                                            <p className="text-xs">
+                                            <p className="text-sm text-muted-foreground">
                                                 {item.description}
                                             </p>
                                         </div>
                                     </div>
 
-                                    <div>
-                                        <Icons.ChevronRight className="size-5 text-muted-foreground" />
-                                    </div>
+                                    <Icons.ArrowRight className="size-5 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1" />
                                 </Link>
-
-                                {index !== siteConfig.menu.length - 1 && (
-                                    <Separator />
-                                )}
                             </li>
                         );
                     })}

@@ -1,5 +1,6 @@
 import { Header } from "@/components/globals/headers";
 import { GeneralShell } from "@/components/globals/layouts";
+import { Inquiry } from "@/components/home";
 import { ProductPage } from "@/components/products";
 
 export default function Page() {
@@ -12,6 +13,14 @@ export default function Page() {
 
             <GeneralShell>
                 <ProductPage />
+            </GeneralShell>
+
+            <GeneralShell
+                classNames={{
+                    mainWrapper: "bg-muted",
+                }}
+            >
+                <Inquiry />
             </GeneralShell>
         </>
     );

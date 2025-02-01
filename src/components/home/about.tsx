@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Icons } from "../icons";
@@ -13,6 +13,8 @@ interface PageProps extends GenericProps {
 
 export function About({ className, title, ...props }: PageProps) {
     const pathname = usePathname();
+    const { scrollYProgress } = useScroll();
+    const scale = useTransform(scrollYProgress, [0, 0.4], [1, 1.3]);
 
     return (
         <section
@@ -22,54 +24,40 @@ export function About({ className, title, ...props }: PageProps) {
             )}
             {...props}
         >
-            <motion.div
-                initial={{ opacity: 0, x: -20, filter: "blur(2px)" }}
-                whileInView={{
-                    opacity: 1,
-                    x: 0,
-                    filter: "blur(0px)",
-                }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                className="aspect-[4/3] size-full basis-1/2"
-            >
-                <Image
-                    src="https://picsum.photos/seed/45646/1000/1000"
-                    alt={title}
-                    width={1000}
-                    height={1000}
-                    className="size-full object-cover"
-                />
-            </motion.div>
+            <div className="group aspect-[4/3] size-full basis-1/2 overflow-hidden rounded-3xl">
+                <motion.div style={{ scale }} className="relative size-full">
+                    <Image
+                        src="https://picsum.photos/seed/45646/1000/1000"
+                        alt={title}
+                        width={1000}
+                        height={1000}
+                        className="size-full object-cover transition-transform group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                </motion.div>
+            </div>
 
             <div className="flex w-full basis-1/2 justify-center">
-                <div className="space-y-5 md:space-y-10">
-                    <motion.h2
-                        initial={{ opacity: 0, x: 20, filter: "blur(2px)" }}
-                        whileInView={{
-                            opacity: 1,
-                            x: 0,
-                            filter: "blur(0px)",
-                        }}
+                <div className="flex flex-col items-start gap-8">
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.6 }}
-                        className="text-balance text-xl font-semibold uppercase md:text-3xl"
+                        transition={{ duration: 0.5 }}
+                        className="rounded-full border px-6 py-2 text-sm font-medium uppercase tracking-wider"
                     >
                         {title}
-                    </motion.h2>
+                    </motion.p>
 
-                    <div className="space-y-5 text-sm md:text-base">
+                    <div className="space-y-6">
                         <motion.p
-                            initial={{ opacity: 0, x: 20, filter: "blur(2px)" }}
-                            whileInView={{
-                                opacity: 1,
-                                x: 0,
-                                filter: "blur(0px)",
-                            }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 0.8 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            className="text-balance text-lg"
                         >
-                            At HCG Group , we connect tea lovers worldwide with
+                            At HCG Group, we connect tea lovers worldwide with
                             the finest blends from top plantations. From the
                             robust flavors of Assam to the delicate notes of
                             Darjeeling, we specialize in sourcing and exporting
@@ -78,14 +66,11 @@ export function About({ className, title, ...props }: PageProps) {
                         </motion.p>
 
                         <motion.p
-                            initial={{ opacity: 0, x: 20, filter: "blur(2px)" }}
-                            whileInView={{
-                                opacity: 1,
-                                x: 0,
-                                filter: "blur(0px)",
-                            }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 1 }}
+                            transition={{ duration: 0.5, delay: 0.4 }}
+                            className="text-balance text-lg"
                         >
                             Our mission is to bridge the gap between growers and
                             consumers by promoting eco-friendly practices and
@@ -96,40 +81,34 @@ export function About({ className, title, ...props }: PageProps) {
                         </motion.p>
 
                         <motion.p
-                            initial={{ opacity: 0, x: 20, filter: "blur(2px)" }}
-                            whileInView={{
-                                opacity: 1,
-                                x: 0,
-                                filter: "blur(0px)",
-                            }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 1.2 }}
-                            className="font-semibold"
+                            transition={{ duration: 0.5, delay: 0.6 }}
+                            className="text-xl font-semibold"
                         >
                             Sip the world with us.
                         </motion.p>
                     </div>
 
                     <motion.div
-                        initial={{ opacity: 0, x: 20, filter: "blur(2px)" }}
-                        whileInView={{
-                            opacity: 1,
-                            x: 0,
-                            filter: "blur(0px)",
-                        }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 1.4 }}
+                        transition={{ duration: 0.5, delay: 0.8 }}
                     >
                         <Button
                             size="lg"
+                            variant={pathname === "/" ? "default" : "outline"}
                             className={cn(
-                                "w-full md:w-auto",
-                                pathname === "/" &&
-                                    "bg-background text-foreground hover:bg-background/80"
+                                "group",
+                                pathname === "/"
+                                    ? "bg-background text-foreground hover:bg-background/90"
+                                    : "border-foreground/20 bg-foreground/5 backdrop-blur-sm hover:border-foreground/40 hover:bg-foreground/10"
                             )}
                         >
                             <span>Learn More</span>
-                            <Icons.ChevronRight />
+                            <Icons.ArrowRight className="ml-2 size-4 transition-transform duration-200 group-hover:translate-x-1" />
                         </Button>
                     </motion.div>
                 </div>
