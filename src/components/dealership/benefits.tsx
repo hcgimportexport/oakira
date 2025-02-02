@@ -79,17 +79,22 @@ const BENEFITS: {
 
 export function Benefits({ className, ...props }: GenericProps) {
     return (
-        <section className={cn("space-y-16 py-20", className)} {...props}>
-            <div className="mx-auto max-w-3xl space-y-4 text-center">
-                <motion.p
+        <section
+            className={cn("relative space-y-16 py-20", className)}
+            {...props}
+        >
+            <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="text-sm font-medium uppercase tracking-wider text-muted-foreground"
+                    className="flex flex-col items-center gap-2"
                 >
-                    Maximize your potential
-                </motion.p>
+                    <span className="rounded-full border px-6 py-2 text-sm font-medium uppercase tracking-wider text-muted-foreground">
+                        Maximize your potential
+                    </span>
+                </motion.div>
 
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
@@ -107,7 +112,7 @@ export function Benefits({ className, ...props }: GenericProps) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.4 }}
-                    className="text-balance text-muted-foreground"
+                    className="text-balance text-lg text-muted-foreground"
                 >
                     At IJARO Group of Company, our goal is to ensure the fast
                     success of our dealers while fostering a lifelong business
@@ -124,7 +129,6 @@ export function Benefits({ className, ...props }: GenericProps) {
             >
                 {BENEFITS.map((benefit, index) => {
                     const Icon = Icons[benefit.icon];
-
                     return (
                         <motion.div
                             key={index}
@@ -135,15 +139,23 @@ export function Benefits({ className, ...props }: GenericProps) {
                                 duration: 0.5,
                                 delay: 0.1 * (index + 1),
                             }}
-                            className="group space-y-4 rounded-3xl bg-muted/50 p-8 transition-colors hover:bg-accent/10"
+                            className="group relative overflow-hidden rounded-3xl bg-muted/50 p-8 transition-all duration-300 hover:bg-accent/10 hover:shadow-lg"
                         >
-                            <Icon className="size-8 text-accent transition-transform duration-300 group-hover:scale-110" />
-                            <h3 className="text-xl font-semibold">
-                                {benefit.title}
-                            </h3>
-                            <p className="text-muted-foreground">
-                                {benefit.description}
-                            </p>
+                            <div className="relative z-10 flex flex-col gap-6">
+                                <div className="flex items-center gap-4">
+                                    <div className="rounded-2xl bg-accent/10 p-4 text-accent transition-transform duration-300 group-hover:scale-110">
+                                        <Icon className="size-6" />
+                                    </div>
+                                    <h3 className="text-xl font-semibold">
+                                        {benefit.title}
+                                    </h3>
+                                </div>
+                                <p className="text-muted-foreground">
+                                    {benefit.description}
+                                </p>
+                            </div>
+
+                            <div className="absolute inset-0 -z-10 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                         </motion.div>
                     );
                 })}

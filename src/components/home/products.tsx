@@ -98,8 +98,8 @@ export function Products({ className, ...props }: GenericProps) {
                         ))}
                     </CarouselContent>
 
-                    <CarouselPrevious className="hidden md:inline-block" />
-                    <CarouselNext className="hidden md:inline-block" />
+                    <CarouselPrevious className="hidden md:flex" />
+                    <CarouselNext className="hidden md:flex" />
                 </Carousel>
             </motion.div>
         </section>

@@ -26,6 +26,7 @@ import {
     MapPin,
     Medal,
     Menu,
+    Navigation,
     Paintbrush,
     Plus,
     Send,
@@ -49,6 +50,7 @@ import {
 export type Icon = LucideIcon;
 
 export const Icons = {
+    Navigation,
     Plus,
     Eye,
     Target,
