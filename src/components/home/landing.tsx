@@ -58,7 +58,7 @@ export function Landing({ className, banners, ...props }: PageProps) {
                                         transition={{ duration: 0.5 }}
                                         className="rounded-full border border-background/20 bg-background/5 px-6 py-2 text-sm font-medium uppercase tracking-wider backdrop-blur-sm"
                                     >
-                                        Welcome to HCG
+                                        Welcome to Oakira
                                     </motion.p>
 
                                     <motion.h1

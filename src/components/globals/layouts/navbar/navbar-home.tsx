@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/site";
 import { useNavbarStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -53,11 +54,15 @@ export function NavbarHome() {
                 <Link
                     href="/"
                     title="Home"
-                    className="flex items-center gap-2 text-2xl font-bold transition-transform duration-300 hover:scale-105"
+                    className="transition-transform duration-300 hover:scale-105"
                 >
-                    <h4 className="text-xl font-bold uppercase md:text-2xl">
-                        {siteConfig.name}
-                    </h4>
+                    <Image
+                        src="https://utfs.io/a/wjndgl4cy4/6fyUUFYtyiQeASI30ORVF9sUGOm5n4Y1XP2RlcNzJCBu0TeH"
+                        alt="Logo"
+                        width={94}
+                        height={46}
+                        className="object-cover"
+                    />
                 </Link>
 
                 <ul className="hidden items-center gap-10 sm:flex">

@@ -1,7 +1,7 @@
 import { getAbsoluteURL } from "@/lib/utils";
 
 export const siteConfig: SiteConfig = {
-    name: "HCG Import Export",
+    name: "Oakira",
     description:
         "Specialized in the import and export of products for the health and beauty sector",
     longDescription:
@@ -9,8 +9,8 @@ export const siteConfig: SiteConfig = {
     keywords: [],
     category: "Import and Export",
     developer: {
-        name: "DRVGO",
-        url: "https://itsdrvgo.me/",
+        name: "kiwemedia",
+        url: "https://kiwemedia.com/",
     },
     og: {
         url: getAbsoluteURL("/og.webp"),
@@ -26,7 +26,7 @@ export const siteConfig: SiteConfig = {
     },
     contact: {
         officeHours: "Monday - Friday, 9:00 AM - 5:00 PM",
-        email: "info@hcgimportexport.com",
+        email: "info@oakira.com",
         phone: "+1 (234) 567-8901",
         location: "Darjeeeling, West Bengal, India",
     },

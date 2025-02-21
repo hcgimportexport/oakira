@@ -37,12 +37,13 @@ export function WhyChooseUs({ className, ...props }: GenericProps) {
                     transition={{ duration: 0.5, delay: 0.4 }}
                     className="text-balance text-muted-foreground md:text-lg"
                 >
-                    Explore the benefits of choosing HCG Group for your tea
-                    needs. Our expertise includes a diverse range of teas, with
-                    a special focus on the world-renowned Darjeeling teas. Known
-                    as the &ldquo;Champagne of Teas,&rdquo; our Darjeeling
-                    blends offer a unique aroma and flavor that tea enthusiasts
-                    treasure.
+                    At Oakira Tea, we bring years of expertise in sourcing and
+                    crafting the finest teas, ensuring exceptional quality and
+                    flavor in every cup. Our commitment to tradition and
+                    innovation allows us to offer unique blends tailored to
+                    diverse tastes. With globally recognized certifications for
+                    authenticity and sustainability, we prioritize ethical
+                    sourcing and environmental responsibility.
                 </motion.p>
             </div>
 

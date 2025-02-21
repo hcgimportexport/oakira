@@ -22,7 +22,7 @@ export const whyChooseUs: WhyChooseUs[] = [
     {
         title: "Top Quality Teas at Affordable Rates",
         description:
-            "At HCG Group, we believe that premium teas should be accessible to all. By leveraging efficient production techniques and economies of scale, we offer our top-quality teas, including Darjeeling specialties, at highly competitive prices.",
+            "At Oakira, we believe that premium teas should be accessible to all. By leveraging efficient production techniques and economies of scale, we offer our top-quality teas, including Darjeeling specialties, at highly competitive prices.",
         imageUrl: "https://picsum.photos/seed/103/1280/720",
     },
 ];

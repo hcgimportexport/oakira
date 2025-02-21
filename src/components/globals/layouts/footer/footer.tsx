@@ -88,14 +88,15 @@ export function Footer({ className, ...props }: GenericProps) {
                             transition={{ duration: 0.5 }}
                             className="text-sm text-muted-foreground"
                         >
-                            &copy; {new Date().getFullYear()}{" "}
+                            <span>&copy; {new Date().getFullYear()}</span> made
+                            with ❤️ by{" "}
                             <Link
                                 href={siteConfig.developer.url}
-                                className="transition-colors hover:text-accent"
+                                className="text-sm hover:underline"
                             >
                                 {siteConfig.developer.name}
-                            </Link>
-                            . All rights reserved.
+                            </Link>{" "}
+                            . <span>All rights reserved.</span>
                         </motion.p>
 
                         {siteConfig.links && (

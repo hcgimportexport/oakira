@@ -55,7 +55,7 @@ export function NavbarMob({ className, ...props }: GenericProps) {
             {...props}
         >
             <div
-                className="space-y-5 overflow-y-scroll pt-[3.7rem]"
+                className="space-y-5 overflow-y-scroll pt-[4.5rem]"
                 style={{ scrollbarWidth: "none" }}
             >
                 <ul ref={navListRef} className="space-y-2 p-4">

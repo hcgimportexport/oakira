@@ -6,7 +6,12 @@ import {
 } from "@/components/about";
 import { Header } from "@/components/globals/headers";
 import { GeneralShell } from "@/components/globals/layouts";
-import { About, Inquiry, MemberShipAndCertification } from "@/components/home";
+import {
+    About,
+    Inquiry,
+    MemberShipAndCertification,
+    WhatWeDo,
+} from "@/components/home";
 
 export default function Page() {
     return (
@@ -38,6 +43,7 @@ export default function Page() {
             </GeneralShell>
 
             <GeneralShell>
+                <WhatWeDo />
                 <TrustedExportPartner />
                 <CoreBeliefs />
             </GeneralShell>

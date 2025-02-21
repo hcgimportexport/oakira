@@ -27,7 +27,7 @@ export function About({ className, title, ...props }: PageProps) {
             <div className="group aspect-[4/3] size-full basis-1/2 overflow-hidden rounded-3xl">
                 <motion.div style={{ scale }} className="relative size-full">
                     <Image
-                        src="https://picsum.photos/seed/45646/1000/1000"
+                        src="https://utfs.io/a/wjndgl4cy4/6fyUUFYtyiQeBq3MjaEUkR3rjH7EFh4MzWxKoIObiC5ySTPg"
                         alt={title}
                         width={1000}
                         height={1000}
@@ -57,12 +57,7 @@ export function About({ className, title, ...props }: PageProps) {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="text-balance text-lg"
                         >
-                            At HCG Group, we connect tea lovers worldwide with
-                            the finest blends from top plantations. From the
-                            robust flavors of Assam to the delicate notes of
-                            Darjeeling, we specialize in sourcing and exporting
-                            premium teas with a commitment to quality and
-                            sustainability.
+                            We are leading in premium tea products.
                         </motion.p>
 
                         <motion.p
@@ -72,12 +67,10 @@ export function About({ className, title, ...props }: PageProps) {
                             transition={{ duration: 0.5, delay: 0.4 }}
                             className="text-balance text-lg"
                         >
-                            Our mission is to bridge the gap between growers and
-                            consumers by promoting eco-friendly practices and
-                            fair trade, ensuring every cup tells a story of
-                            tradition and care. Whether you&apos;re a retailer,
-                            distributor, or tea enthusiast, HCG is your trusted
-                            partner for exceptional teas.
+                            Oakira is a trusted brand known for making and
+                            exporting high-quality tea. We offer a wide range of
+                            teas, including Black tea, Green tea, Oolong tea and
+                            White tea.
                         </motion.p>
 
                         <motion.p
@@ -85,9 +78,22 @@ export function About({ className, title, ...props }: PageProps) {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.6 }}
+                            className="text-balance text-lg"
+                        >
+                            Each of our teas is carefully selected to provide
+                            great taste and quality, using the best ingredients.
+                            We&apos;re dedicated to bringing you the best tea
+                            experience, enjoyed by tea lovers everywhere.
+                        </motion.p>
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.8 }}
                             className="text-xl font-semibold"
                         >
-                            Sip the world with us.
+                            We Curate The Finest Teas For Every Taste.
                         </motion.p>
                     </div>
 
@@ -95,7 +101,7 @@ export function About({ className, title, ...props }: PageProps) {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.8 }}
+                        transition={{ duration: 0.5, delay: 1 }}
                     >
                         <Button
                             size="lg"

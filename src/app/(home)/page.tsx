@@ -6,7 +6,6 @@ import {
     MapFrame,
     MemberShipAndCertification,
     Products,
-    WhatWeDo,
     WhyChooseUs,
 } from "@/components/home";
 import { banners } from "@/config/banner";
@@ -25,7 +24,6 @@ export default function Page() {
             </GeneralShell>
 
             <GeneralShell>
-                <WhatWeDo />
                 <Products />
             </GeneralShell>
 

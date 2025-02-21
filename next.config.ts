@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
             {
                 hostname: "picsum.photos",
             },
+            {
+                protocol: "https",
+                hostname: "utfs.io",
+                pathname: "/a/wjndgl4cy4/**",
+            },
         ],
     },
 };

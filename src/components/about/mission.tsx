@@ -127,8 +127,8 @@ export function OurMission({ className, ...props }: GenericProps) {
                     <Image
                         src={
                             hoveredIndex === 0
-                                ? "https://picsum.photos/seed/mission/1000/1000"
-                                : "https://picsum.photos/seed/vision/1000/1000"
+                                ? "https://utfs.io/a/wjndgl4cy4/6fyUUFYtyiQengiGc4V0Ffz7iqTbycKXE4lx3J5ua19dMmYs"
+                                : "https://utfs.io/a/wjndgl4cy4/6fyUUFYtyiQedCyiqiApl06YRsIy1WzCLnZqdhEfv5cmjXaQ"
                         }
                         alt="What Defines Us"
                         width={1000}

@@ -38,7 +38,7 @@ export function WhatWeDo({ className, ...props }: GenericProps) {
                 >
                     Trust us for teas that delight your senses, promote
                     wellness, and provide lasting value. Discover why tea lovers
-                    worldwide rely on HCG Group for unmatched flavor, freshness,
+                    worldwide rely on Oakira for unmatched flavor, freshness,
                     and reliability.
                 </motion.p>
             </div>

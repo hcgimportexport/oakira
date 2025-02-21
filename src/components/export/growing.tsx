@@ -106,7 +106,7 @@ export function Growing({ className, ...props }: GenericProps) {
                     }}
                 >
                     <Image
-                        src="https://picsum.photos/seed/global/2100/900"
+                        src="https://picsum.photos/seed/globally/2100/900"
                         alt="Global Rubber Mat Demand"
                         fill
                         className="object-cover"
