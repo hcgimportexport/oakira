@@ -2,14 +2,14 @@ import { BuildTogether } from "@/components/catalogue";
 import { CountryWeExport, Growing } from "@/components/export";
 import { Header } from "@/components/globals/headers";
 import { GeneralShell } from "@/components/globals/layouts";
-import { Inquiry } from "@/components/home";
+import { Inquiry, Testimonials } from "@/components/home";
 
 export default function Page() {
     return (
         <>
             <Header
                 title="Export"
-                imageUrl="https://picsum.photos/seed/56994/2000/2000"
+                imageUrl="https://utfs.io/a/wjndgl4cy4/6fyUUFYtyiQeWVSBW0uvVMc0UZwGfObYaE45uQsHdKl36CDI"
             />
 
             <GeneralShell>
@@ -30,6 +30,10 @@ export default function Page() {
                 }}
             >
                 <BuildTogether />
+            </GeneralShell>
+
+            <GeneralShell>
+                <Testimonials />
             </GeneralShell>
 
             <GeneralShell

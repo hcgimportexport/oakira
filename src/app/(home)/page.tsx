@@ -6,6 +6,7 @@ import {
     MapFrame,
     MemberShipAndCertification,
     Products,
+    Testimonials,
     WhyChooseUs,
 } from "@/components/home";
 import { banners } from "@/config/banner";
@@ -39,6 +40,14 @@ export default function Page() {
             <GeneralShell>
                 <WhyChooseUs />
                 <MapFrame />
+            </GeneralShell>
+
+            <GeneralShell
+                classNames={{
+                    mainWrapper: "bg-muted",
+                }}
+            >
+                <Testimonials />
             </GeneralShell>
 
             <GeneralShell

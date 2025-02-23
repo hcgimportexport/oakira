@@ -1,5 +1,6 @@
 "use client";
 
+import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import Image from "next/image";
@@ -60,9 +61,9 @@ export function Growing({ className, ...props }: GenericProps) {
                         The demand for high-quality rubber products is on a
                         steady rise across the globe, driven by industries
                         seeking durable, versatile, and eco-friendly solutions.
-                        At Ijaro Rubber, we proudly cater to this growing need,
-                        exporting premium rubber mats to some of the
-                        world&apos;s leading economies, including the United
+                        At {siteConfig.name} Rubber, we proudly cater to this
+                        growing need, exporting premium rubber mats to some of
+                        the world&apos;s leading economies, including the United
                         States of America, Germany, Canada, the United Kingdom,
                         France, and the Netherlands.
                     </motion.p>
@@ -78,7 +79,8 @@ export function Growing({ className, ...props }: GenericProps) {
                         like the Philippines, Mexico, Belgium, Italy, Japan, and
                         Australia due to their unmatched durability and
                         performance. Countries like Poland, Greece, Austria, and
-                        the Czech Republic are increasingly turning to Ijaro
+                        the Czech Republic are increasingly turning to{" "}
+                        {siteConfig.name}
                         Rubber for innovative solutions that deliver exceptional
                         value. As the global demand continues to expand, we
                         remain committed to manufacturing excellence and

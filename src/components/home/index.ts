@@ -7,3 +7,4 @@ export * from "./products";
 export * from "./social-strip";
 export * from "./what-we-do";
 export * from "./why-choose-us";
+export * from "./testimonials";

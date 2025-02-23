@@ -1,5 +1,6 @@
 "use client";
 
+import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import { Icons } from "../icons";
@@ -63,9 +64,9 @@ export function GrowWithUs({ className, ...props }: GenericProps) {
                     transition={{ duration: 0.5, delay: 0.4 }}
                     className="text-balance text-lg text-muted-foreground"
                 >
-                    Join the Ijaro family as a dealer and boost your business
-                    with our high-quality rubber products. Partner with us to
-                    access innovative products and exceptional service.
+                    Join the {siteConfig.name} family as a dealer and boost your
+                    business with our high-quality rubber products. Partner with
+                    us to access innovative products and exceptional service.
                 </motion.p>
             </div>
 

@@ -2,8 +2,8 @@
 
 import { cn, getDomainNameFromURL } from "@/lib/utils";
 import { Certification } from "@/lib/validations";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 
 interface InfiniteMovingCardsProps {
     items: Certification[];
@@ -110,14 +110,15 @@ export function InfiniteMovingCards({
                         key={item.name}
                     >
                         <blockquote className="flex items-center gap-4">
-                            <Avatar>
-                                <AvatarImage
+                            <div className="size-10 rounded-full">
+                                <Image
                                     src={item.logoUrl}
                                     alt={item.name}
-                                    className="relative z-20 rounded-lg"
+                                    className="z-20 size-full rounded-full object-cover"
+                                    width={40}
+                                    height={40}
                                 />
-                                <AvatarFallback>{item.name[0]}</AvatarFallback>
-                            </Avatar>
+                            </div>
 
                             <div className="relative z-20">
                                 <h6 className="font-medium">{item.name}</h6>

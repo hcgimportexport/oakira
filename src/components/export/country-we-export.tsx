@@ -1,44 +1,34 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import Autoplay from "embla-carousel-autoplay";
-import { motion } from "motion/react";
+import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import Image from "next/image";
 import { Icons } from "../icons";
-import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
-
-const COUNTRIES = [
-    {
-        name: "United States",
-        flag: "https://picsum.photos/seed/usa/800/500",
-    },
-    {
-        name: "Germany",
-        flag: "https://picsum.photos/seed/germany/800/500",
-    },
-    {
-        name: "United Kingdom",
-        flag: "https://picsum.photos/seed/uk/800/500",
-    },
-    {
-        name: "France",
-        flag: "https://picsum.photos/seed/france/800/500",
-    },
-    {
-        name: "Netherlands",
-        flag: "https://picsum.photos/seed/netherlands/800/500",
-    },
-    {
-        name: "Canada",
-        flag: "https://picsum.photos/seed/canada/800/500",
-    },
-    {
-        name: "Italy",
-        flag: "https://picsum.photos/seed/italy/800/500",
-    },
-];
 
 export function CountryWeExport({ className, ...props }: GenericProps) {
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+
+    const mouseX = useSpring(x, { stiffness: 50, damping: 10 });
+    const mouseY = useSpring(y, { stiffness: 50, damping: 10 });
+
+    const transformX = useTransform(mouseX, [-500, 500], [-20, 20]);
+    const transformY = useTransform(mouseY, [-500, 500], [-20, 20]);
+
+    const handleMouseMove = (event: React.MouseEvent) => {
+        const rect = event.currentTarget.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        x.set(event.clientX - centerX);
+        y.set(event.clientY - centerY);
+    };
+
+    const handleMouseLeave = () => {
+        x.set(0);
+        y.set(0);
+    };
+
     return (
         <section className={cn("space-y-10 py-20", className)} {...props}>
             <div className="space-y-4">
@@ -70,46 +60,26 @@ export function CountryWeExport({ className, ...props }: GenericProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4 }}
+                className="relative mx-auto aspect-[21/9] w-full overflow-hidden rounded-full"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
             >
-                <Carousel
-                    opts={{
-                        align: "start",
-                        loop: true,
+                <motion.div
+                    className="relative size-full"
+                    style={{
+                        x: transformX,
+                        y: transformY,
+                        scale: 1.1,
                     }}
-                    plugins={[
-                        Autoplay({
-                            delay: 3000,
-                        }),
-                    ]}
                 >
-                    <CarouselContent>
-                        {COUNTRIES.map((country, index) => (
-                            <CarouselItem
-                                key={index}
-                                className="basis-full md:basis-1/2 lg:basis-1/5"
-                            >
-                                <div className="p-1">
-                                    <div className="overflow-hidden rounded-xl">
-                                        <div className="group relative aspect-[4/3]">
-                                            <Image
-                                                src={country.flag}
-                                                alt={country.name}
-                                                fill
-                                                className="object-cover transition-transform duration-300 group-hover:scale-110"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                                            <div className="absolute inset-x-0 bottom-0 p-4">
-                                                <p className="font-medium text-white">
-                                                    {country.name}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                </Carousel>
+                    <Image
+                        src="https://utfs.io/a/wjndgl4cy4/6fyUUFYtyiQeIUQ0x2d5Un7QbKSzf08Oq4Xie5hPJ1Rp3CNm"
+                        alt="Global Export Coverage"
+                        fill
+                        className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-background/10 to-background/40" />
+                </motion.div>
             </motion.div>
         </section>
     );

@@ -21,28 +21,35 @@ export const siteConfig: SiteConfig = {
         Facebook: "#",
         Twitter: "#",
         Instagram: "#",
-        Linkedin: "#",
+        Linkedin:
+            "https://www.linkedin.com/in/subam-pradhan-orthodox-and-ctc-tea-consultant-645896339/",
         Youtube: "#",
     },
     contact: {
         officeHours: "Monday - Friday, 9:00 AM - 5:00 PM",
-        email: "info@oakira.com",
+        email: "subham@oakiragroup.com",
         phone: "+1 (234) 567-8901",
         location: "Darjeeeling, West Bengal, India",
     },
     menu: [
+        {
+            name: "Home",
+            description: "Welcome to Oakira",
+            href: "/",
+            icon: "Home",
+        },
         {
             name: "About",
             description: "Learn more about us",
             href: "/about",
             icon: "User",
         },
-        {
-            name: "Services",
-            description: "Explore our services",
-            href: "/services",
-            icon: "ShoppingBag",
-        },
+        // {
+        //     name: "Services",
+        //     description: "Explore our services",
+        //     href: "/services",
+        //     icon: "ShoppingBag",
+        // },
         {
             name: "Dealership",
             description: "Become a dealer",

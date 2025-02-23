@@ -59,8 +59,8 @@ export function NavbarHome() {
                     <Image
                         src="https://utfs.io/a/wjndgl4cy4/6fyUUFYtyiQeASI30ORVF9sUGOm5n4Y1XP2RlcNzJCBu0TeH"
                         alt="Logo"
-                        width={94}
-                        height={46}
+                        width={108}
+                        height={53}
                         className="object-cover"
                     />
                 </Link>

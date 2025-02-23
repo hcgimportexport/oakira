@@ -1,5 +1,6 @@
 "use client";
 
+import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import { Icons } from "../icons";
@@ -114,9 +115,9 @@ export function Benefits({ className, ...props }: GenericProps) {
                     transition={{ duration: 0.5, delay: 0.4 }}
                     className="text-balance text-lg text-muted-foreground"
                 >
-                    At IJARO Group of Company, our goal is to ensure the fast
-                    success of our dealers while fostering a lifelong business
-                    relationship. Here&apos;s how we support you:
+                    At {siteConfig.name} Group of Company, our goal is to ensure
+                    the fast success of our dealers while fostering a lifelong
+                    business relationship. Here&apos;s how we support you:
                 </motion.p>
             </div>
 
