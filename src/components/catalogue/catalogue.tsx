@@ -22,10 +22,10 @@ export function Catalogue({ className, title, ...props }: PageProps) {
             )}
             {...props}
         >
-            <div className="group aspect-[4/3] size-full basis-1/2 overflow-hidden rounded-3xl">
+            <div className="group aspect-square size-full basis-1/2 overflow-hidden rounded-3xl">
                 <motion.div style={{ scale }} className="relative size-full">
                     <Image
-                        src="https://picsum.photos/seed/catalogue/1000/1000"
+                        src="https://utfs.io/a/wjndgl4cy4/6fyUUFYtyiQeQ7FzR1w6CnRsptl7PZ0mu8IN1yoKMiL5cwF2"
                         alt={title}
                         width={1000}
                         height={1000}
