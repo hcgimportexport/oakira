@@ -44,9 +44,7 @@ export function Growing({ className, ...props }: GenericProps) {
                     className="text-balance text-3xl font-bold md:text-4xl lg:text-5xl"
                 >
                     Growing Global Demand for{" "}
-                    <span className="text-accent">
-                        Indian Rubber Mat Products
-                    </span>
+                    <span className="text-accent">Indian Tea</span>
                 </motion.h2>
 
                 <div className="space-y-6 text-muted-foreground">
@@ -107,7 +105,7 @@ export function Growing({ className, ...props }: GenericProps) {
                 >
                     <Image
                         src="https://picsum.photos/seed/globally/2100/900"
-                        alt="Global Rubber Mat Demand"
+                        alt="Global Tea Demand"
                         fill
                         className="object-cover"
                     />

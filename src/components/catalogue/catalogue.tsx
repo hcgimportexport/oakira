@@ -65,10 +65,10 @@ export function Catalogue({ className, title, ...props }: PageProps) {
                     className="text-balance text-lg text-muted-foreground"
                 >
                     Download our comprehensive e-catalogue to explore our full
-                    range of high-quality rubber products. Find detailed
-                    information, specifications, and options to meet your needs.
-                    Discover the perfect solutions for your applications with
-                    our easy-to-navigate catalogue.
+                    range of high-quality tea. Find detailed information,
+                    specifications, and options to meet your needs. Discover the
+                    perfect solutions for your applications with our
+                    easy-to-navigate catalogue.
                 </motion.p>
 
                 <motion.div

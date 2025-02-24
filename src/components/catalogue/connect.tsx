@@ -64,11 +64,11 @@ export function Connect({ className, ...props }: GenericProps) {
                     className="text-balance text-muted-foreground"
                 >
                     As a Global Business Director with over 10 years of
-                    experience, I specialize in helping rubber mat importers
-                    overcome challenges and achieve rapid business growth. I
-                    understand the struggles importers face with low-quality
-                    mats from other exporters. My commitment is to provide only
-                    the highest quality products, ensuring durability and
+                    experience, I specialize in helping tea importers overcome
+                    challenges and achieve rapid business growth. I understand
+                    the struggles importers face with low-quality mats from
+                    other exporters. My commitment is to provide only the
+                    highest quality products, ensuring durability and
                     performance. Additionally, I offer unparalleled support to
                     help you navigate the market and achieve sustained success.
                     Partner with us for excellence and growth.

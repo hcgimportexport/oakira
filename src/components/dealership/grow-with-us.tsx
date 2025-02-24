@@ -13,7 +13,7 @@ const FEATURES: {
     {
         title: "Quality Products",
         description:
-            "We take pride in manufacturing high-quality rubber products for various industries.",
+            "We take pride in manufacturing high-quality tea for various industries.",
         icon: "Medal",
     },
     {
@@ -65,8 +65,8 @@ export function GrowWithUs({ className, ...props }: GenericProps) {
                     className="text-balance text-lg text-muted-foreground"
                 >
                     Join the {siteConfig.name} family as a dealer and boost your
-                    business with our high-quality rubber products. Partner with
-                    us to access innovative products and exceptional service.
+                    business with our high-quality tea. Partner with us to
+                    access innovative products and exceptional service.
                 </motion.p>
             </div>
 
