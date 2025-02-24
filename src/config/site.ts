@@ -5,7 +5,7 @@ export const siteConfig: SiteConfig = {
     description:
         "Specialized in the import and export of products for the health and beauty sector",
     longDescription:
-        "A company specialized in the import and export to the health and beauty sector with a wide range of products, from cosmetics to medical equipment.",
+        "Oakira Group is a leading manufacturer and exporter of premium teas. We are committed to quality, innovation, and customer satisfaction, delivering exceptional tea experiences to markets worldwide",
     keywords: [],
     category: "Import and Export",
     developer: {

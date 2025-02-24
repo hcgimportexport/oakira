@@ -5,6 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
 import { GeneralShell } from "../shells";
 
@@ -20,11 +21,16 @@ export function Footer({ className, ...props }: GenericProps) {
                         <div className="space-y-4">
                             <Link
                                 href="/"
-                                className="group inline-flex items-center gap-2 text-2xl font-bold transition-transform duration-300 hover:scale-105"
+                                title="Home"
+                                className="transition-transform duration-300 hover:scale-105"
                             >
-                                <p className="text-xl font-bold uppercase md:text-2xl">
-                                    {siteConfig.name}
-                                </p>
+                                <Image
+                                    src="https://utfs.io/a/wjndgl4cy4/6fyUUFYtyiQeASI30ORVF9sUGOm5n4Y1XP2RlcNzJCBu0TeH"
+                                    alt="Logo"
+                                    width={108}
+                                    height={53}
+                                    className="object-cover"
+                                />
                             </Link>
 
                             <p className="max-w-md text-balance text-muted-foreground">
@@ -36,7 +42,6 @@ export function Footer({ className, ...props }: GenericProps) {
                             <div className="space-y-4">
                                 <h4 className="text-lg font-semibold">Pages</h4>
                                 <div className="flex flex-col gap-3">
-                                    <FooterLink href="/">Home</FooterLink>
                                     {siteConfig.menu.map(({ name, href }) => (
                                         <FooterLink key={name} href={href}>
                                             {name}

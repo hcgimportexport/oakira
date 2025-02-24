@@ -9,7 +9,7 @@ export default function Page() {
         <>
             <Header
                 title="Contact Us"
-                imageUrl="https://picsum.photos/seed/8498/2000/2000"
+                imageUrl="https://utfs.io/a/wjndgl4cy4/6fyUUFYtyiQehjjcUT7mVbqt2nYg1lLe5pPDOWXrvSNuhwT7"
             />
 
             <GeneralShell>

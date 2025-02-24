@@ -18,7 +18,7 @@ export default function Page() {
         <>
             <Header
                 title="About Us"
-                imageUrl="https://picsum.photos/seed/68766/2000/2000"
+                imageUrl="https://utfs.io/a/wjndgl4cy4/6fyUUFYtyiQeOBrv2XQke6vKJxL2HVnXaSZ9m1WAdhEB3Mbt"
             />
 
             <GeneralShell>

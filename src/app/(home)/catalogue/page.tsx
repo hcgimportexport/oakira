@@ -8,7 +8,7 @@ export default function Page() {
         <>
             <Header
                 title="E-Catalogue"
-                imageUrl="https://picsum.photos/seed/494/2000/2000"
+                imageUrl="https://utfs.io/a/wjndgl4cy4/6fyUUFYtyiQeOyDmUzQke6vKJxL2HVnXaSZ9m1WAdhEB3Mbt"
             />
 
             <GeneralShell>

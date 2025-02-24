@@ -1,6 +1,5 @@
 "use client";
 
-import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import Image from "next/image";
@@ -58,14 +57,14 @@ export function Growing({ className, ...props }: GenericProps) {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="text-balance"
                     >
-                        The demand for high-quality rubber products is on a
-                        steady rise across the globe, driven by industries
-                        seeking durable, versatile, and eco-friendly solutions.
-                        At {siteConfig.name} Rubber, we proudly cater to this
-                        growing need, exporting premium rubber mats to some of
-                        the world&apos;s leading economies, including the United
-                        States of America, Germany, Canada, the United Kingdom,
-                        France, and the Netherlands.
+                        The global demand for high-quality tea is steadily
+                        rising, driven by consumers and industries seeking
+                        authentic, flavorful, and sustainably sourced blends. At
+                        Cakira Tea, we proudly cater to this growing need,
+                        exporting premium teas to some of the world&apos;s
+                        leading markets, including the United States of America,
+                        Germany, Canada, the United Kingdom, France, and the
+                        Netherlands.
                     </motion.p>
 
                     <motion.p
@@ -75,17 +74,16 @@ export function Growing({ className, ...props }: GenericProps) {
                         transition={{ duration: 0.5, delay: 0.4 }}
                         className="text-balance"
                     >
-                        Our products have earned the trust of global markets
-                        like the Philippines, Mexico, Belgium, Italy, Japan, and
-                        Australia due to their unmatched durability and
-                        performance. Countries like Poland, Greece, Austria, and
-                        the Czech Republic are increasingly turning to{" "}
-                        {siteConfig.name}
-                        Rubber for innovative solutions that deliver exceptional
-                        value. As the global demand continues to expand, we
-                        remain committed to manufacturing excellence and
-                        delivering tailored solutions to meet the specific needs
-                        of diverse industries worldwide.
+                        Our teas have earned the trust of global markets like
+                        the Philippines, Mexico, Belgium, Italy, Japan, and
+                        Australia due to their exquisite taste and superior
+                        quality. Countries like Poland, Greece, Austria, and the
+                        Czech Republic are increasingly turning to Cakira Tea
+                        for unique blends that deliver an exceptional
+                        tea-drinking experience. As global demand continues to
+                        expand, we remain committed to excellence,
+                        sustainability, and crafting teas that meet the diverse
+                        preferences of tea lovers worldwide.
                     </motion.p>
                 </div>
             </div>
