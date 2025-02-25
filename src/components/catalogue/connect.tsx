@@ -1,8 +1,10 @@
 "use client";
 
+import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import { Icons } from "../icons";
 import { Button } from "../ui/button";
 
@@ -79,10 +81,36 @@ export function Connect({ className, ...props }: GenericProps) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.6 }}
+                    className="flex gap-4"
                 >
-                    <Button size="lg" className="group">
-                        Schedule a Call
-                        <Icons.Calendar className="ml-2 size-4 transition-transform duration-200 group-hover:scale-110" />
+                    <Button
+                        asChild
+                        size="lg"
+                        className="group bg-[#1e6388] hover:bg-[#1e6388]/90"
+                    >
+                        <Link
+                            href={siteConfig.links!.Linkedin!}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Icons.Linkedin className="transition-transform duration-200 group-hover:scale-110" />
+                            LinkedIn
+                        </Link>
+                    </Button>
+
+                    <Button
+                        size="lg"
+                        className="group bg-[#1e9c4d] hover:bg-[#1e9c4d]/90"
+                        asChild
+                    >
+                        <Link
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Icons.WhatsApp className="transition-transform duration-200 group-hover:scale-110" />
+                            WhatsApp
+                        </Link>
                     </Button>
                 </motion.div>
             </div>
